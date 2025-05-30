@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>점메추 - 점심메뉴 추천 서비스</title>
+  <link rel="stylesheet" href="./assets/style.css" />
+  <script defer src="./scripts/main.js"></script>
+  <script defer src="./scripts/feedback.js"></script>
+  <script defer src="./scripts/map.js"></script>
+</head>
+<body>
+  <header>
+    <h1>🍱 점메추</h1>
+    <p>오늘 점심 뭐 먹지? AI가 추천해드립니다!</p>
+  </header>
+
+  <section id="question-section">
+    <form id="question-form">
+      <!-- 질문 항목: JavaScript에서 동적 생성 -->
+      <div id="question-container"></div>
+      <button type="submit">점심 메뉴 추천받기</button>
+    </form>
+  </section>
+
+  <section id="result-section" style="display: none;">
+    <h2>🍽 추천 메뉴</h2>
+    <div id="menu-result">
+      <!-- GPT 결과가 여기에 표시됨 -->
+    </div>
+    <button id="show-map-button">근처 가게 보기</button>
+
+    <h3>⭐ 추천 만족도 평가</h3>
+    <form id="feedback-form">
+      <label for="rating">별점:</label>
+      <select id="rating" required>
+        <option value="">선택</option>
+        <option value="5">★★★★★</option>
+        <option value="4">★★★★☆</option>
+        <option value="3">★★★☆☆</option>
+        <option value="2">★★☆☆☆</option>
+        <option value="1">★☆☆☆☆</option>
+      </select>
+      <label for="comment">후기:</label>
+      <textarea id="comment" rows="3" placeholder="추천받은 메뉴는 어땠나요?" required></textarea>
+      <button type="submit">후기 제출</button>
+    </form>
+  </section>
+
+  <section id="review-section">
+    <h2>💬 사용자 후기</h2>
+    <ul id="review-list">
+      <!-- 최신 후기 10개 표시 -->
+    </ul>
+  </section>
+
+  <div id="map-popup" style="display: none;">
+    <!-- Naver 지도 팝업이 여기에 삽입됨 -->
+  </div>
+</body>
+</html>
